@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+
+patchesStrategicMerge:
+- deployment-patch.yaml
+
+images:
+- name: gitops-argocd
+  newName: rogerw/gitops-argocd
+  newTag: 4feb460198aeadcc991cc7df69e1b19544bc561f
+- name: rogerw/gitops-argocd
+  newTag: v1.0.0
+resources:
+- ../../base

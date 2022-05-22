@@ -1,0 +1,34 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gitops-argocd
+  labels:
+    app: gitops-argocd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gitops-argocd
+  template:
+    metadata:
+      labels:
+        app: gitops-argocd
+    spec:
+      containers:
+      - name: gitops-argocd
+        image: gitops-argocd:REPLACEME
+        ports:
+        - containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /ping
+            port: 8080
+          initialDelaySeconds: 3
+          periodSeconds: 2
+        ReadinessProbe:
+          httpGet:
+            path: /ping
+            port: 8080
+          initialDelaySeconds: 3
+          periodSeconds: 2
