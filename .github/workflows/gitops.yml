@@ -26,7 +26,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: rogerw/gitops-argocd:${{ github.sha }}
+        tags: monirul87/gitops-argocd:${{ github.sha }}
         build-args: |
           version=${{ github.sha }}
 
