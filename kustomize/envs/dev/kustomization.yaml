@@ -7,7 +7,7 @@ patchesStrategicMerge:
 
 images:
 - name: gitops-argocd
-  newName: monirul87/gitops-argocd
-  newTag: 4feb460198aeadcc991cc7df69e1b19544bc561f
+  newName: /gitops-argocd
+  newTag: c5147109eddef972a1d97deaf52115cc1a58a625
 resources:
 - ../../base
