@@ -6,5 +6,5 @@ metadata:
   labels:
     app: gitops-argocd
 spec:
-  replicas: 3
+  replicas: 2
 
